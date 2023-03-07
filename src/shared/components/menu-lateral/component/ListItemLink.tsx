@@ -1,0 +1,28 @@
+import { ListItemButton, ListItemIcon, Icon, ListItemText } from '@mui/material'
+import { useNavigate, useResolvedPath, useMatch } from 'react-router-dom'
+
+interface IListItemLinkProps {
+  to: string
+  icon: string
+  label: string
+  onClick?: (() => void | undefined)
+}
+
+export const ListItemLink: React.FC<IListItemLinkProps> = ({ to, icon, label, onClick }) => {
+  const navigate = useNavigate()
+  const resolvedPath = useResolvedPath(to)
+  const match = useMatch({ path: resolvedPath.pathname, end: false })
+
+  const handleClick = () => {
+    navigate(to)
+    onClick?.() //se for undefined não faz o onClick
+  }
+  return (
+    <ListItemButton selected={!!match} onClick={handleClick}>
+      <ListItemIcon >
+        <Icon>{icon}</Icon>
+      </ListItemIcon>
+      <ListItemText primary='Página Inicial' />
+    </ListItemButton>
+  )
+}
