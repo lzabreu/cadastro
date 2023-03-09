@@ -1,7 +1,5 @@
-import { Avatar, Divider, Drawer, List, useMediaQuery, useTheme } from '@mui/material'
-
-import { Box } from '@mui/system'
-import { useDrawerContext } from '../../contexts'
+import { Box, Avatar, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material'
+import { useAppThemeContext, useDrawerContext } from '../../contexts'
 import { ListItemLink } from './component/ListItemLink'
 
 interface IDrawerProps {
@@ -11,6 +9,7 @@ export const MenuLateral: React.FC<IDrawerProps> = ({ children }) => {
   const theme = useTheme()
   const smDown = useMediaQuery(theme.breakpoints.down('sm'))
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext()
+  const { toggleTheme, themeName } = useAppThemeContext()
 
   return (
     <>
@@ -25,15 +24,25 @@ export const MenuLateral: React.FC<IDrawerProps> = ({ children }) => {
           <Divider />
           <Box flex={1}>
             <List component='nav'>
-              {drawerOptions.map((drawerOption, key) =>(
+              {drawerOptions.map((drawerOption, key) => (
                 <ListItemLink
-                key={key}
+                  key={key}
                   icon={drawerOption.icon}
                   label={drawerOption.label}
                   to={drawerOption.path}
                   onClick={smDown ? toggleDrawerOpen : undefined}
                 />
               ))}
+            </List>
+          </Box>
+          <Box>
+            <List component='nav'>
+              <ListItemButton onClick={toggleTheme}>
+                <ListItemIcon >
+                  <Icon>{ themeName === 'dark' ? 'dark_mode' : 'light_mode'}</Icon>
+                </ListItemIcon>
+                <ListItemText primary={themeName ==='light' ? 'Mudar para Dark': 'Mudar para Light'} />
+              </ListItemButton>
             </List>
           </Box>
         </Box>

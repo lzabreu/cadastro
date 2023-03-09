@@ -1,15 +1,8 @@
-:root {
-  font-size: 62.5%;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
-  font-family: 'Roboto', sans-serif;}
-
-body {
-  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
 }
