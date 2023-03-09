@@ -40,15 +40,15 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
       )}
 
       <Box flex={1} display='flex' justifyContent='end'>
-        {mostrarBotaoNovo &&(
+        {mostrarBotaoNovo && (
           <Button
-          variant='contained'
-          disableElevation
-          color='primary'
-          onClick={aoClicarEmBotaoNovo}
-          endIcon={<Icon>add</Icon>}>
-          {textoBotaoNovo}
-        </Button>
+            variant='contained'
+            disableElevation
+            color='primary'
+            onClick={aoClicarEmBotaoNovo}
+            endIcon={<Icon>add</Icon>}>
+            {textoBotaoNovo}
+          </Button>
         )}
       </Box>
 
