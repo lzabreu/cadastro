@@ -5,6 +5,24 @@
       "email": "lzabreu@mac.com",
       "cidadeId": 1,
       "nomeCompleto": "Luciano Abreu"
+    },
+    {
+      "id": 2,
+      "email": "paula@mac.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Paula Centola"
+    },
+    {
+      "id": 3,
+      "email": "lucas@mac.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Lucas de Paula"
+    },
+    {
+      "id": 4,
+      "email": "fefe@mac.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Fernanda Abreu"
     }
   ]
 }

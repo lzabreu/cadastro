@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material'
 import { useSearchParams } from 'react-router-dom'
 
 import { IListagemPessoa, PessoasService } from '../../shared/services/api/pessoas/PessoasService'
@@ -7,6 +7,7 @@ import { FerramentasDaListagem } from '../../shared/components'
 import { LayoutBaseDePagina } from '../../shared/layouts'
 import { useDebounce } from '../../shared/hooks'
 import { margin } from '@mui/system'
+import { TableRowsTwoTone } from '@mui/icons-material'
 
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -69,8 +70,19 @@ export const ListagemDePessoas: React.FC = () => {
               </TableRow>
 
             ))}
-
           </TableBody>
+          {totalCount === 0 && !isLoading &&(
+            <caption>Nenhum registro encontrado</caption>
+          )}
+          <TableFooter>
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <LinearProgress variant='indeterminate' />
+                </TableCell>
+              </TableRow>
+            )}
+          </TableFooter>
         </Table>
       </TableContainer>
     </LayoutBaseDePagina>
