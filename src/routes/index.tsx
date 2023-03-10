@@ -1,7 +1,6 @@
-import { Button } from '@mui/material'
 import { useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { Dashboard } from '../pages'
+import { Dashboard, ListagemDePessoas } from '../pages'
 import { useDrawerContext } from '../shared/contexts'
 
 export const AppRoutes = () => {
@@ -9,16 +8,23 @@ export const AppRoutes = () => {
 useEffect(()=>{
   setDrawerOptions([
     {
-      label: 'Página Inicial',
       icon: 'home',
+      label: 'Página Inicial',
       path: '/pagina-inicial'
-    }
+    },
+    {
+      icon: 'people',
+      label: 'Pessoas',
+      path: '/pessoas'
+    },
   ])
 },[])
 
   return (
     <Routes>
       <Route path="/pagina-inicial" element={<Dashboard />} />
+      <Route path="/pessoas" element={<ListagemDePessoas />} />
+
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
     </Routes>
   )

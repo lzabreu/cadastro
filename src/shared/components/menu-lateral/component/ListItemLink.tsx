@@ -22,7 +22,7 @@ export const ListItemLink: React.FC<IListItemLinkProps> = ({ to, icon, label, on
       <ListItemIcon >
         <Icon>{icon}</Icon>
       </ListItemIcon>
-      <ListItemText primary='Página Inicial' />
+      <ListItemText primary={label} />
     </ListItemButton>
   )
 }

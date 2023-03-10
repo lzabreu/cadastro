@@ -14,5 +14,5 @@ export const Environment = {
   /**
    * Url base de consulta
    */
-  URL_BASE: 'http://localhost.3333',
+  URL_BASE: 'http://localhost:3333',
 }

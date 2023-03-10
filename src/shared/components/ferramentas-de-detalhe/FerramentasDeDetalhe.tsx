@@ -6,19 +6,19 @@ interface IFerramentasDeDetalheProps {
   showBackButton?: boolean
   showDeleteButton?: boolean
   showSaveButton?: boolean
-  showSaveAndBackButton?: boolean
+  showSaveAndCloseButton?: boolean
 
   showNewButtonLoading?: boolean
   showBackButtonLoading?: boolean
   showDeleteButtonLoading?: boolean
   showSaveButtonLoading?: boolean
-  showSaveAndBackButtonLoading?: boolean
+  showSaveAndCloseButtonLoading?: boolean
 
   onClickNew?: () => void
   onClickBack?: () => void
   onClickDelete?: () => void
   onClickSave?: () => void
-  onClickSaveAndBack?: () => void
+  onClickSaveAndClose?: () => void
 }
 
 export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = (
@@ -28,17 +28,17 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = (
     showBackButton = true,
     showDeleteButton = true,
     showSaveButton = true,
-    showSaveAndBackButton = false,
+    showSaveAndCloseButton = false,
     showNewButtonLoading = false,
     showBackButtonLoading = false,
     showDeleteButtonLoading = false,
     showSaveButtonLoading = false,
-    showSaveAndBackButtonLoading = false,
+    showSaveAndCloseButtonLoading = false,
     onClickNew,
     onClickBack,
     onClickDelete,
     onClickSave,
-    onClickSaveAndBack,
+    onClickSaveAndClose,
   }
 ) => {
   const theme = useTheme()
@@ -74,20 +74,20 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = (
       )}
       {showNewButtonLoading && (<Skeleton width={110} height={60} />)}
 
-      {(showSaveAndBackButton && !showSaveAndBackButtonLoading && !smDown && !mdDown) && (
+      {(showSaveAndCloseButton && !showSaveAndCloseButtonLoading && !smDown && !mdDown) && (
         <Button
           variant='outlined'
           disableElevation
           color='primary'
           startIcon={<Icon>save</Icon>}
-          onClick={onClickSaveAndBack}
+          onClick={onClickSaveAndClose}
         >
           <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
-            Salvar e voltar
+            Salvar e Fechar
           </Typography>
         </Button>
       )}
-      {(showSaveAndBackButtonLoading && smDown && !mdDown) && (<Skeleton width={180} height={60} />)}
+      {(showSaveAndCloseButtonLoading && smDown && !mdDown) && (<Skeleton width={180} height={60} />)}
 
       {(showDeleteButton && !showDeleteButtonLoading) && (
         <Button
@@ -120,7 +120,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = (
       {(showNewButtonLoading && smDown) && (<Skeleton width={110} height={60} />)}
 
       {
-        (showBackButton && (showNewButton || showDeleteButton || showSaveButton || showSaveAndBackButton))
+        (showBackButton && (showNewButton || showDeleteButton || showSaveButton || showSaveAndCloseButton))
         && (
           <Divider variant='middle' orientation='vertical' />
 
