@@ -104,7 +104,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = (
       )}
       {showDeleteButtonLoading && (<Skeleton width={110} height={60} />)}
 
-      {(showSaveButton && !showSaveButtonLoading && !smDown) && (
+      {(showNewButton && !showNewButtonLoading && !smDown) && (
         <Button
           variant='outlined'
           disableElevation
@@ -123,9 +123,9 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = (
         (showBackButton && (showNewButton || showDeleteButton || showSaveButton || showSaveAndCloseButton))
         && (
           <Divider variant='middle' orientation='vertical' />
-
         )
       }
+
       {(showBackButton && !showBackButtonLoading) && (
         <Button
           variant='outlined'
