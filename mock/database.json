@@ -4,13 +4,13 @@
       "id": 3,
       "nomeCompleto": "Lucas de Paula",
       "email": "lucas@mac.com",
-      "cidadeId": 1
+      "cidadeId": 2
     },
     {
       "id": 5,
+      "nomeCompleto": "Luciano Abreu",
       "email": "lzabreu@mac.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Luciano Abreu"
+      "cidadeId": 4
     },
     {
       "id": 6,
@@ -83,6 +83,12 @@
       "nomeCompleto": "Khoni",
       "email": "Khoni@gmail.com",
       "cidadeId": 2
+    },
+    {
+      "nomeCompleto": "Maria",
+      "email": "maria@gmail.com",
+      "cidadeId": 3,
+      "id": 18
     }
   ],
   "cidades": [
@@ -93,6 +99,25 @@
     {
       "nome": "Campinas",
       "id": 2
+    },
+    {
+      "nome": "Santos",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "nome": "Carapicuiba"
+    },
+    {
+      "id": 5,
+      "nome": "Santo Andre"
+    },
+    {
+      "id": 6,
+      "nome": "Sorocaba"
     }
-  ]
+  ],
+  "auth":{
+    "accessToken": "aaaaaaa.bbbbbbb.ccccccc"
+  }
 }

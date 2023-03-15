@@ -44,19 +44,19 @@ export const ListagemDeCidades: React.FC = () => {
     })
   }, [busca, pagina])
 
-  const handleDelete = (id:number)=>{
-    if(confirm('Quer Apagar?')) {
+  const handleDelete = (id: number) => {
+    if (confirm('Quer Apagar?')) {
       CidadesService.deleteById(id)
-      .then(result => {
-        if(result instanceof Error) {
-          alert(result.message)
-        }else{
-          setRows(oldRows => {
-            return [...oldRows.filter(oldRow => oldRow.id !== id)]
-          })
-          alert('Registro apagado com sucesso.')
-        }
-      })
+        .then(result => {
+          if (result instanceof Error) {
+            alert(result.message)
+          } else {
+            setRows(oldRows => {
+              return [...oldRows.filter(oldRow => oldRow.id !== id)]
+            })
+            alert('Registro apagado com sucesso.')
+          }
+        })
     }
   }
 
@@ -68,7 +68,7 @@ export const ListagemDeCidades: React.FC = () => {
           textoBotaoNovo='Nova'
           mostrarInputBusca
           textoDaBusca={busca}
-          aoClicarEmBotaoNovo={()=> navigate('/cidades/detalhe/nova')}
+          aoClicarEmBotaoNovo={() => navigate('/cidades/detalhe/nova')}
           aoMudarTextoDeBusca={texto => setSearchParams({ busca: texto, pagina: '1' }, { replace: true })}
         />
       }
@@ -79,19 +79,19 @@ export const ListagemDeCidades: React.FC = () => {
             <TableRow>
               <TableCell width={150}>Ações</TableCell>
               <TableCell>Nome</TableCell>
-             
+
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.id}>
                 <TableCell>
-                  <IconButton size='small' onClick={()=> handleDelete(row.id)}>
+                  <IconButton size='small' onClick={() => handleDelete(row.id)}>
                     <Icon>
                       delete
                     </Icon>
                   </IconButton>
-                  <IconButton size='small' onClick={()=> navigate(`/cidades/detalhe/${row.id}`)}>
+                  <IconButton size='small' onClick={() => navigate(`/cidades/detalhe/${row.id}`)}>
                     <Icon>
                       edit
                     </Icon>
@@ -120,7 +120,7 @@ export const ListagemDeCidades: React.FC = () => {
                   <Pagination
                     page={pagina}
                     count={Math.ceil(totalCount / Environment.LIMITE_DE_LINHAS)}
-                    onChange={(e ,newPage)=> setSearchParams({ busca, pagina: newPage.toString() }, { replace: true }) }
+                    onChange={(e, newPage) => setSearchParams({ busca, pagina: newPage.toString() }, { replace: true })}
                   />
                 </TableCell>
               </TableRow>

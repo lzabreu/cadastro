@@ -13,7 +13,7 @@ interface IFormData {
 }
 const formValidationSchema: yup.Schema<IFormData> = yup.object().shape({
   nome: yup.string().required().min(3),
- 
+
 })
 
 export const DetalheDeCidades = () => {
@@ -136,7 +136,7 @@ export const DetalheDeCidades = () => {
                 <VTextField onChange={e => setNome(e.target.value)} disabled={isLoading} fullWidth label='Cidade' name='nome' />
               </Grid>
             </Grid>
-            
+
           </Grid>
         </Box >
       </VForm >
