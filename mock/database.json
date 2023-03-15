@@ -84,5 +84,15 @@
       "email": "Khoni@gmail.com",
       "cidadeId": 2
     }
+  ],
+  "cidades": [
+    {
+      "nome": "São Paulo",
+      "id": 1
+    },
+    {
+      "nome": "Campinas",
+      "id": 2
+    }
   ]
 }
